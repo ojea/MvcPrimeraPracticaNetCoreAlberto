@@ -1,0 +1,25 @@
+﻿@model ImagenesZapas
+
+<div class="card">
+    <div class="card-body">
+        <h5">
+            Imagen @ViewData["POSICION"] de @ViewData["ULTIMO"]
+        </h5>
+        <button onclick="loadZapatillasPaginacion(1)">
+            Primero
+        </button>
+        <button onclick="loadZapatillasPaginacion(@ViewData["ANTERIOR"])">
+            Anterior
+        </button>
+            <button onclick="loadZapatillasPaginacion(@ViewData["SIGUIENTE"])">
+                Siguiente
+            </button>
+            <button onclick="loadZapatillasPaginacion(@ViewData["ULTIMO"])">
+                Ultimo
+            </button>
+            <div>
+
+                <img src="@Model.Imagen" style="width: 100px" height="100px"/>
+            </div>
+    </div>
+</div>

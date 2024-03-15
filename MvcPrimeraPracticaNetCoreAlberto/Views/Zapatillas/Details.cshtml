@@ -1,0 +1,25 @@
+﻿@{
+    Zapatillas zapatillas = ViewData["ZAPATILLAS"] as Zapatillas;
+}
+
+<a asp-controller="Zapatillas" asp-action="Index">Volver</a>
+<div class="card">
+    <div class="card-body">
+        <h4>@zapatillas.Nombre</h4>
+        <h4>@zapatillas.Precio: @zapatillas.Precio</h4>
+        <h4>@zapatillas.@zapatillas.Descripcion</h4>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function loadZapatillasPaginacion(posicion) {
+            $(function () {
+                $("#contenidoImagen").load("/PaginacionZapatillas?posicion="
+                    + posicion + "&idZapatilla=" + @zapatillas.IdProducto);
+            });
+        }
+
+        loadZapatillasPaginacion(1);
+    </script>
+}
